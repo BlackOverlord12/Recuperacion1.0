@@ -1,6 +1,126 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/lblTitulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cotizacion"
+        android:textAlignment="center"
+        android:textSize="27dp"
+        android:textColor="@color/white"
+        android:background="#313C9F"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- TextView lblNombre -->
+    <TextView
+        android:id="@+id/lblNombre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nombre"
+        android:layout_marginTop="16dp"/>
+
+    <!-- TextView lblFolio -->
+    <TextView
+        android:id="@+id/lblFolio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Folio"/>
+
+    <!-- EditText txtDescripcion -->
+    <EditText
+        android:id="@+id/txtDescripcion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Descripción"/>
+
+    <!-- EditText txtValorAuto -->
+    <EditText
+        android:id="@+id/txtValorAuto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Valor del auto"/>
+
+    <!-- EditText txtPorEng -->
+    <EditText
+        android:id="@+id/txtPorEng"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Porcentaje de enganche"/>
+
+    <!-- RadioButton rdb12 -->
+    <RadioButton
+        android:id="@+id/rdb12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="12 meses"/>
+
+    <!-- RadioButton rbd18 -->
+    <RadioButton
+        android:id="@+id/rdb18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="18 meses"/>
+
+    <!-- RadioButton rbd24 -->
+    <RadioButton
+        android:id="@+id/rdb24"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="24 meses"/>
+
+    <!-- RadioButton rbd36 -->
+    <RadioButton
+        android:id="@+id/rdb36"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="36 meses"/>
+
+    <!-- EditText txtMensual -->
+    <EditText
+        android:id="@+id/txtMensual"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Pago mensual"/>
+
+    <!-- Button btnCalcular -->
+    <Button
+        android:id="@+id/btnCalcular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Calcular"/>
+
+    <!-- Button btnLimpiar -->
+    <Button
+        android:id="@+id/btnLimpiar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Limpiar"/>
+
+    <!-- Button btnRegresar -->
+    <Button
+        android:id="@+id/btnRegresar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Regresar"/>
+
+    <!-- TextView lblPagoMensual -->
+    <TextView
+        android:id="@+id/lblPagoMensual"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pago mensual"/>
+
+    <!-- TextView lblEnganche -->
+    <TextView
+        android:id="@+id/lblEnganche"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enganche"/>
+
+</LinearLayout>
