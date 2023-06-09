@@ -1,126 +1,136 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    tools:context=".Cotizacion_Activity">
+
+
+
 
     <TextView
-        android:id="@+id/lblTitulo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Cotizacion"
+        android:text="Nombre Cliente"
+        android:textSize="30dp"
         android:textAlignment="center"
-        android:textSize="27dp"
-        android:textColor="@color/white"
-        android:background="#313C9F"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <!-- TextView lblNombre -->
-    <TextView
         android:id="@+id/lblNombre"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Nombre"
-        android:layout_marginTop="16dp"/>
+        app:layout_constraintBottom_toTopOf="@id/lblFolio"
+        ></TextView>
 
-    <!-- TextView lblFolio -->
     <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Folio"
         android:id="@+id/lblFolio"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Folio"/>
+        app:layout_constraintTop_toBottomOf="@+id/lblNombre"
+        android:textSize="20dp"
+        ></TextView>
 
-    <!-- EditText txtDescripcion -->
     <EditText
-        android:id="@+id/txtDescripcion"
-        android:layout_width="match_parent"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:hint="Descripción"/>
+        android:hint="Automovil"
+        android:textSize="20dp"
+        android:id="@+id/txtDescricion"
+        app:layout_constraintTop_toBottomOf="@id/lblFolio"
 
-    <!-- EditText txtValorAuto -->
+        tools:ignore="MissingConstraints"></EditText>
+
     <EditText
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:hint="Precio Automovil"
+        android:inputType="numberDecimal"
+        android:textSize="20dp"
         android:id="@+id/txtValorAuto"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Valor del auto"/>
+        app:layout_constraintTop_toBottomOf="@id/txtDescricion"
+        tools:ignore="MissingConstraints"></EditText>
 
-    <!-- EditText txtPorEng -->
     <EditText
-        android:id="@+id/txtPorEng"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:hint="Porcentaje Enganche"
+        android:inputType="numberDecimal"
+        android:textSize="20dp"
+        android:id="@+id/txtPorcentaje"
+        app:layout_constraintTop_toBottomOf="@id/txtValorAuto"
+        tools:ignore="MissingConstraints"></EditText>
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/txtPorcentaje"
+        tools:ignore="MissingConstraints">
+
+        <!-- Agrega tus radio buttons dentro del RadioGroup -->
+        <RadioButton
+            android:id="@+id/rb1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="12 Meses" />
+
+        <RadioButton
+            android:id="@+id/rb2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="18 Meses" />
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/rb3"
+            android:text="24 Meses"></RadioButton>
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/rb4"
+            android:text="36 Meses"></RadioButton>
+
+    </RadioGroup>
+
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Porcentaje de enganche"/>
+        android:text=""
+        android:id="@+id/lblPagoM"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup"
+        android:textSize="20dp"
+        ></TextView>
 
-    <!-- RadioButton rdb12 -->
-    <RadioButton
-        android:id="@+id/rdb12"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="12 meses"/>
-
-    <!-- RadioButton rbd18 -->
-    <RadioButton
-        android:id="@+id/rdb18"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="18 meses"/>
-
-    <!-- RadioButton rbd24 -->
-    <RadioButton
-        android:id="@+id/rdb24"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="24 meses"/>
-
-    <!-- RadioButton rbd36 -->
-    <RadioButton
-        android:id="@+id/rdb36"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="36 meses"/>
-
-    <!-- EditText txtMensual -->
-    <EditText
-        android:id="@+id/txtMensual"
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Pago mensual"/>
+        android:text=""
+        android:id="@+id/lblPagoI"
+        app:layout_constraintTop_toBottomOf="@+id/lblPagoM"
+        android:textSize="20dp"
+        ></TextView>
 
-    <!-- Button btnCalcular -->
     <Button
-        android:id="@+id/btnCalcular"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Calcular"/>
-
-    <!-- Button btnLimpiar -->
+        android:text="Cotizar"
+        app:layout_constraintTop_toBottomOf="@+id/lblPagoI"
+        android:id="@+id/btnCotizar"
+        ></Button>
     <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Limpiar"
+        app:layout_constraintTop_toBottomOf="@+id/btnCotizar"
         android:id="@+id/btnLimpiar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Limpiar"/>
+        ></Button>
 
-    <!-- Button btnRegresar -->
     <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Regresar"
+        app:layout_constraintTop_toBottomOf="@+id/btnLimpiar"
         android:id="@+id/btnRegresar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Regresar"/>
+        ></Button>
 
-    <!-- TextView lblPagoMensual -->
-    <TextView
-        android:id="@+id/lblPagoMensual"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Pago mensual"/>
-
-    <!-- TextView lblEnganche -->
-    <TextView
-        android:id="@+id/lblEnganche"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Enganche"/>
-
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
